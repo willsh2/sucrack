@@ -28,7 +28,6 @@ class PasswordCracker:
     def run_cracker(self):
         with open(self.wordlist, "r", encoding="latin1") as file:
             passwords = file.read().splitlines()
-
         split_passwords = [passwords[i:i + self.threads] for i in range(0, len(passwords), self.threads)]
 
         threads = []
